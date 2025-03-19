@@ -1,86 +1,92 @@
-# Advanced Weather Forecasting System using OpenWeather API
+# MULTITHREADED CHAT APPLICATION USING JAVA SOCKETS
 
-**COMPANY:** CODTECH IT SOLUTIONS  
+## COMPANY: CODTECH IT SOLUTIONS  
 **NAME:** P.NITISH
-**INTERN ID:** CT08UJT 
+
+**INTERN ID:** CT08UJT
+
 **DOMAIN:** JAVA  
+
 **DURATION:** 4 WEEKS  
+
 **MENTOR:** NEELA SANTOSH  
 
 ---
 
-## Overview
-**WeatherApp** is a command-line Java application designed to provide real-time weather data for any city using the [OpenWeather API](https://openweathermap.org/). The application integrates JSON parsing through the `org.json` library to efficiently extract and display weather details such as temperature, weather conditions, and city information.
+## OBJECTIVE  
+The objective of this project is to develop a **multithreaded chat application** using **Java Sockets** that allows multiple clients to communicate with each other in real-time through a central server.
 
-This project aims to deliver a simple yet powerful weather forecasting solution with a focus on error handling, data accuracy, and seamless user interaction via a command-line interface (CLI).
-
----
-
-## Key Features
-✅ **Real-Time Data Fetching**: Retrieves current weather conditions directly from the OpenWeather API for any valid city name provided by the user.  
-✅ **Accurate Data Display**: Shows essential details like city name, temperature, and weather conditions.  
-✅ **Error Handling**: Manages invalid city names, network failures, and API-related issues gracefully.  
-✅ **Lightweight and Efficient**: Designed as a minimal yet powerful CLI application for quick weather updates.  
-✅ **User-Friendly Interface**: Clear and concise data presentation for improved usability.  
+Networking and multithreading in Java enable seamless communication between multiple users, making this project useful for collaborative messaging systems, real-time notifications, and distributed applications.
 
 ---
 
-## Technologies Used
-- **Java** (Primary programming language)  
-- **OpenWeather API** (For fetching real-time weather data)  
-- **org.json Library** (For efficient JSON parsing)  
-- **Command-Line Interface (CLI)** (For flexible user interaction)  
+## REQUIREMENTS  
+The application should implement the following functionalities:
+
+### 1️⃣ Multithreaded Server  
+- The server should be capable of handling multiple clients simultaneously.  
+- Each client should be assigned a separate thread for communication.  
+- The server should broadcast messages to all connected clients.  
+
+### 2️⃣ Client Communication  
+- Clients should be able to connect to the server and exchange messages in real time.  
+- Messages sent by one client should be received by all other connected clients.  
+- The client should continuously listen for incoming messages while also allowing users to send messages.  
+
+### 3️⃣ User-Friendly Interface  
+- The program should have a simple command-line interface (CLI) for sending and receiving messages.  
+- Error handling should be implemented to manage disconnections, network failures, and invalid inputs.  
+
+### 4️⃣ Scalability & Performance  
+- The system should efficiently handle multiple concurrent client connections.  
+- Multithreading should be used to avoid blocking and ensure smooth performance.  
 
 ---
 
-## Prerequisites
-Ensure the following are installed on your system:
-- **Java Development Kit (JDK)** (Version 8 or above recommended)
-- **org.json library** (e.g., `json-20240303.jar`)
+## EXPECTED DELIVERABLES  
+To successfully complete this task, the following deliverables should be submitted:  
+✔ A **functional Java program** implementing a multithreaded chat system.  
+✔ Proper **documentation** and **comments** in the code to improve readability.  
+✔ A **GitHub repository** containing the complete source code.  
+✔ A well-structured **README file** that explains the program’s functionality, installation, and usage.  
 
 ---
 
-## Setup Instructions
-### 1. Clone this repository:
-```bash
- git clone <repository-url>
- cd WeatherApp
+## TECHNICAL IMPLEMENTATION  
+The program utilizes Java’s built-in **java.net** and **java.io** packages, which provide various classes for handling networking and input/output operations efficiently:
+
+🔹 **ServerSocket** – Listens for incoming client connections.  
+🔹 **Socket** – Establishes a connection between clients and the server.  
+🔹 **PrintWriter** – Sends messages from the server to clients.  
+🔹 **BufferedReader** – Reads incoming messages from clients.  
+🔹 **Threads** – Ensures multiple clients can communicate concurrently.  
+
+Additionally, **exception handling** is implemented to manage disconnections and I/O errors gracefully.  
+
+---
+
+## HOW TO RUN THE APPLICATION  
+
+### 1. Compile the Code  
+```sh
+javac ChatServer.java ChatClient.java
 ```
 
-### 2. Download the `org.json` library from [Maven Repository](https://mvnrepository.com/artifact/org.json/json).
-
-### 3. Compile the Java source file:
-```bash
- javac -cp .:json-20240303.jar WeatherApp.java
+### 2. Start the Server  
+```sh
+java ChatServer
 ```
 
-### 4. Run the application with a city name as an argument:
-```bash
- java -cp .:json-20240303.jar WeatherApp <CityName>
+### 3. Start Clients (Run in multiple terminals)  
+```sh
+java ChatClient
 ```
 
----
-
-## Results
-![Image](https://github.com/user-attachments/assets/24d89fca-ca50-40b3-a115-00fbb367c778)
-
----
-
-## API Information
-This application uses the **OpenWeather API**. To acquire your API key:
-1. Sign up at [OpenWeather](https://home.openweathermap.org/users/sign_up).
-2. Generate an API key from your profile dashboard.
-3. Replace the `apiKey` variable in `WeatherApp.java` with your generated key.
-
-```java
- String apiKey = "<YOUR_API_KEY>";
-```
+### 4. Start Chatting!  
+Clients can send messages, which will be broadcasted to all connected users.  
+The chat continues until the clients disconnect.
 
 ---
 
-## Error Handling
-- If the city name is invalid or misspelled, the program will gracefully handle the error and prompt the user accordingly.
-- API errors such as rate limits or network failures are also managed to ensure smooth execution.
-
----
-
+## OUTPUTS  
+![Chat Application Output](https://github.com/user-attachments/assets/57d91360-8cb1-4a5c-a1ca-85831fb581a1)
