@@ -89,4 +89,4 @@ The chat continues until the clients disconnect.
 ---
 
 ## OUTPUTS  
-![Chat Application Output](https://github.com/user-attachments/assets/57d91360-8cb1-4a5c-a1ca-85831fb581a1)
+![Image](https://github.com/user-attachments/assets/5d13524c-d2fc-4ce6-b25e-c49286791b7b)
